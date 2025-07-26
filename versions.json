@@ -1,0 +1,5 @@
+import json
+async with httpx.AsyncClient() as client:
+    response = await client.get(UPDATE_VERSION_URL)
+    text = response.text
+    version_info = json.loads(text)  # parse manually
